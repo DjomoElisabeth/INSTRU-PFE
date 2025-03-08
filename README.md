@@ -6,10 +6,10 @@
 ###### This project includes the following aspects:
 1. Data Collection Using Multiple Sensors and Real-Time Capabilities under Arduino IDE
 2. Data Transmission via LoRa
-3. Data Visualization Utilizing Blynk and Node-RED
-4. PCB Design Using Altium
-5. 3D Object Modeling with SolidWorks
-6. Embedded Linux Image Creation with Yocto
+3.  Embedded Linux Image Creation with Yocto
+4. Data Visualization Utilizing Blynk and Node-RED
+5. PCB Design Using Altium
+6. 3D Object Modeling with SolidWorks
 
 ##### Here’s a summary of our project:
 
