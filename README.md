@@ -4,7 +4,7 @@
 #### Supervised by : Henri-François Raynaud
 
 ###### This project includes the following aspects:
-1. Data Collection Using Multiple Sensors and Real-Time Capabilities with FreeRTOS
+1. Data Collection Using Multiple Sensors and Real-Time Capabilities under Arduino IDE
 2. Data Transmission via LoRa
 3. Data Visualization Utilizing Blynk and Node-RED
 4. PCB Design Using Altium
