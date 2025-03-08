@@ -108,7 +108,7 @@ void setup() {
     xTaskCreate(serialWriterTask, "Serial", 2048, NULL, 2, NULL);
 
     Serial.println("Initialization complete!");
-   // xSemaphoreGive(xQueueSemaphore);
+  
     vTaskStartScheduler();
 }
 
