@@ -64,7 +64,7 @@ void serialWriterTask(void *pvParameters);
 int SF = 8;
 int BW = 250000;
 int PREAMBULE = 12;
-int codingRate = 0;
+int codingRate = 4;
 
 void setup() {
     Serial.begin(115200);
@@ -84,10 +84,10 @@ void setup() {
    
     // LoRa initialization
     LoRa.setPins(SS, RST, DIO0);
-    // LoRa.disableCrc();
-    // LoRa.setSpreadingFactor(SF);
-    // LoRa.setSignalBandwidth(BW);
-    // LoRa.setPreambleLength(PREAMBULE);
+    
+    LoRa.setSpreadingFactor(SF);
+    LoRa.setSignalBandwidth(BW);
+    LoRa.setPreambleLength(PREAMBULE);
     LoRa.setTxPower(10);
     
     if (!LoRa.begin(433.5E6)) {
@@ -396,9 +396,7 @@ void serialWriterTask(void *pvParameters) {
         LoRa.print(sendMessage);
         LoRa.endPacket();
         digitalWrite(LED_OK, !digitalRead(LED_OK));
-        
-       
-
+    
         int payloadSize = sendMessage.length();
 
         // Calculate Time On Air
@@ -409,6 +407,8 @@ void serialWriterTask(void *pvParameters) {
         Serial.print(" -----------------------------------------------------------------------\n");
    }
 }
+
+
 
 // Calculate the number of payload symbols
 int calculateNpayload(int payloadSize,int SF,  int CR, bool hasCRC, bool isImplicitHeader, bool lowDataRateOptimize) {
